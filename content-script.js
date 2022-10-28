@@ -109,6 +109,10 @@ function renderToolTipResultTranslator(
   <br />
   <label>Output: <span>${selectedTextTranslated}</span></label>`;
   toolTipWrapper.appendChild(toolTipContainer);
+  const closeIconContainer = document.createElement("div");
+  closeIconContainer.id = "close";
+  closeIconContainer.innerHTML = `<img src="https://img.icons8.com/windows/32/000000/macos-close.png"/>`;
+  toolTipWrapper.appendChild(closeIconContainer);
   //determine top left of tooltip
   const top =
     selectionTextRange.top +
@@ -128,9 +132,20 @@ function renderToolTipResultTranslator(
   toolTipWrapper.style.cursor = "pointer";
   toolTipWrapper.style.border = "1px solid red";
   toolTipWrapper.style.borderRadius = "10px";
+  toolTipWrapper.style.backgroundColor = "rgb(255 255 255 / 73%)";
+  toolTipContainer.style.paddingTop = "26px";
+  closeIconContainer.style.position = "absolute";
+  closeIconContainer.style.top = "0px";
+  closeIconContainer.style.right = "0px";
+  closeIconContainer.style.zIndex = "100";
   bodyDom.appendChild(toolTipWrapper);
   // display the translation icon next to the selection text
   //listen when you click on the translator icon
+
+  closeIconContainer.addEventListener("click", () => {
+    const translatedResult = document.querySelector("div#translator-result");
+    if (translatedResult) translatedResult.remove();
+  });
 }
 
 // get selected text
@@ -145,8 +160,8 @@ bodyDom.addEventListener("mouseup", () => {
     const selectionRange = getRangeSectionText();
     renderToolTipTranslator(selectionRange, selectionText);
   }
-  // setTimeout(() => {
-  //   const toolTipWrapper = document.querySelector("div#translator");
-  //   if (toolTipWrapper) toolTipWrapper.remove();
-  // }, 3000);
+  setTimeout(() => {
+    const toolTipWrapper = document.querySelector("div#translator");
+    if (toolTipWrapper) toolTipWrapper.remove();
+  }, 3000);
 });
