@@ -105,9 +105,7 @@ function renderToolTipResultTranslator(
   const toolTipContainer = document.createElement("div");
   toolTipContainer.classList.add("translator-result-container");
   toolTipContainer.innerHTML = `
-  <label>Input: <span>${selectionText}</span></label>
-  <br />
-  <label>Output: <span>${selectedTextTranslated}</span></label>`;
+  <label>Translation: <span>${selectedTextTranslated}</span></label>`;
   toolTipWrapper.appendChild(toolTipContainer);
   const closeIconContainer = document.createElement("div");
   closeIconContainer.id = "close";
