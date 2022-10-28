@@ -1,2 +1,3 @@
 - you can add your website in the manifest.json file in "matches" object.
 - server side has to be running to be able to see the translated text
+- use npm run dev to run server
