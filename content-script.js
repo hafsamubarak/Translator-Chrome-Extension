@@ -68,7 +68,7 @@ function renderToolTipTranslator(selectionTextRange, selectionText) {
     (selectionTextRange.width / 2 - toolTipWrapper.offsetWidth / 2) +
     "px";
   toolTipWrapper.style.position = "absolute";
-  // toolTipWrapper.style.background = "white";
+  toolTipWrapper.style.background = "white";
   toolTipWrapper.style.padding = "4px";
   toolTipWrapper.style.top = top;
   toolTipWrapper.style.left = left;

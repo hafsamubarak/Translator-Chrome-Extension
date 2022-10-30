@@ -12,7 +12,7 @@ app.get("/api/translator", async function (req, res) {
   const output = req.query.output; //uk
   if (keyword && input && output) {
     const result = await translate(keyword, { from: input, to: output });
-    console.log("hiiiiiiiiiiiiiiiii", result);
+    console.log(result);
     if (result.text && result.text.length > 0) {
       return res.status(200).json(result);
     } else {
