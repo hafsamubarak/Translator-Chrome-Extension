@@ -107,10 +107,10 @@ function renderToolTipResultTranslator(
   toolTipContainer.innerHTML = `
   <label>Translation: <span>${selectedTextTranslated}</span></label>`;
   toolTipWrapper.appendChild(toolTipContainer);
-  const closeIconContainer = document.createElement("div");
-  closeIconContainer.id = "close";
-  closeIconContainer.innerHTML = `<img src="https://img.icons8.com/windows/32/000000/macos-close.png"/>`;
-  toolTipWrapper.appendChild(closeIconContainer);
+  const closeButtonContainer = document.createElement("div");
+  closeButtonContainer.id = "close";
+  closeButtonContainer.innerHTML = `<button style="background-color:#008CBA; color:#fff; padding:5px;border:transparent;border-radius:7px">Close</button>`;
+  toolTipWrapper.appendChild(closeButtonContainer);
   //determine top left of tooltip
   const top =
     selectionTextRange.top +
@@ -124,23 +124,27 @@ function renderToolTipResultTranslator(
     "px";
   toolTipWrapper.style.position = "absolute";
   // toolTipWrapper.style.background = "white";
-  toolTipWrapper.style.padding = "5px";
+  toolTipWrapper.style.padding = "10px";
+  toolTipWrapper.style.paddingBottom = "45px";
   toolTipWrapper.style.top = top;
   toolTipWrapper.style.left = left;
   toolTipWrapper.style.cursor = "pointer";
-  toolTipWrapper.style.border = "1px solid red";
   toolTipWrapper.style.borderRadius = "10px";
-  toolTipWrapper.style.backgroundColor = "rgb(255 255 255 / 73%)";
+  toolTipWrapper.style.backgroundColor = "#fff";
+  toolTipWrapper.style.boxShadow =
+    "rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px";
   toolTipContainer.style.paddingTop = "26px";
-  closeIconContainer.style.position = "absolute";
-  closeIconContainer.style.top = "0px";
-  closeIconContainer.style.right = "0px";
-  closeIconContainer.style.zIndex = "100";
+  closeButtonContainer.style.position = "absolute";
+  closeButtonContainer.style.bottom = "0px";
+  closeButtonContainer.style.right = "0px";
+  closeButtonContainer.style.zIndex = "100";
+  closeButtonContainer.style.margin = "9px";
+  closeButtonContainer.style.backgroundColor = "#008CBA;";
   bodyDom.appendChild(toolTipWrapper);
   // display the translation icon next to the selection text
   //listen when you click on the translator icon
 
-  closeIconContainer.addEventListener("click", () => {
+  closeButtonContainer.addEventListener("click", () => {
     const translatedResult = document.querySelector("div#translator-result");
     if (translatedResult) translatedResult.remove();
   });
