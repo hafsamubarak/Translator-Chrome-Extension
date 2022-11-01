@@ -102,6 +102,7 @@ function renderToolTipResultTranslator(
 ) {
   const toolTipWrapper = document.createElement("div");
   toolTipWrapper.id = "translator-result";
+  toolTipWrapper.classList = "show";
   const toolTipContainer = document.createElement("div");
   toolTipContainer.classList.add("translator-result-container");
   toolTipContainer.innerHTML = `
@@ -141,6 +142,7 @@ function renderToolTipResultTranslator(
   closeButtonContainer.style.margin = "9px";
   closeButtonContainer.style.backgroundColor = "#008CBA;";
   bodyDom.appendChild(toolTipWrapper);
+
   // display the translation icon next to the selection text
   //listen when you click on the translator icon
 
@@ -149,7 +151,6 @@ function renderToolTipResultTranslator(
     if (translatedResult) translatedResult.remove();
   });
 }
-
 // get selected text
 bodyDom.addEventListener("mouseup", () => {
   //remove before translated popup/tooltip: detect click outside then turn off tooltip
