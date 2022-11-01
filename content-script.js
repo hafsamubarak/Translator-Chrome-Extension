@@ -39,7 +39,7 @@ function renderToolTipTranslator(selectionTextRange, selectionText) {
   toolTipWrapper.id = "translator";
   const toolTipIcon = document.createElement("div");
   toolTipIcon.classList.add("translator-icon");
-  toolTipIcon.innerHTML = `<svg width="21px" height="21px" version="1.1" id="anna_vital_language_icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  toolTipIcon.innerHTML = `<svg width="34px" height="34px" version="1.1" id="anna_vital_language_icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
   x="0px" y="0px" viewBox="0 0 256 256" enable-background="new 0 0 256 256" xml:space="preserve">
 <path d="M62.4,101c-1.5-2.1-2.1-3.4-1.8-3.9c0.2-0.5,1.6-0.7,3.9-0.5c2.3,0.2,4.2,0.5,5.8,0.9c1.5,0.4,2.8,1,3.8,1.7
  c1,0.7,1.8,1.5,2.3,2.6c0.6,1,1,2.3,1.4,3.7c0.7,2.8,0.5,4.7-0.5,5.7c-1.1,1-2.6,0.8-4.6-0.6c-2.1-1.4-3.9-2.8-5.5-4.2
@@ -60,6 +60,7 @@ function renderToolTipTranslator(selectionTextRange, selectionText) {
  l101.9-33.9V50.6L124.2,50.6z M219.4,71.9V19L138.1,46L219.4,71.9z M227,201.9L196.5,92L176,85.6l-30.9,90.8l18.9,5.9l5.8-18.7
  l31.9,10l5.7,22.3L227,201.9z M174.8,147.7l22.2,6.9l-10.9-42.9L174.8,147.7z"/>
 </svg>`;
+  toolTipIcon.style.fill = "cornflowerblue";
   toolTipWrapper.appendChild(toolTipIcon);
   //determine top left of tooltip
   const top = selectionTextRange.top + selectionTextRange.height + 6 + "px";
