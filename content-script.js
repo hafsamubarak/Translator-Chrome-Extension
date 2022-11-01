@@ -154,10 +154,10 @@ function renderToolTipResultTranslator(
 // get selected text
 bodyDom.addEventListener("mouseup", () => {
   //remove before translated popup/tooltip: detect click outside then turn off tooltip
-  // setTimeout(() => {
-  //   const tooltipResult = document.querySelector("div#translator-result");
-  //   if (tooltipResult) tooltipResult.remove();
-  // }, 6000);
+  setTimeout(() => {
+    const tooltipResult = document.querySelector("div#translator-result");
+    if (tooltipResult) tooltipResult.remove();
+  }, 6000);
   selectionText = getSelectedText();
   if (selectionText.length > 0) {
     const selectionRange = getRangeSectionText();
